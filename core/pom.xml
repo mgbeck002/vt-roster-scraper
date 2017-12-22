@@ -7,20 +7,59 @@
     <parent>
         <groupId>com.mbeck</groupId>
         <artifactId>vt-roster-scraper</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <version>${project.version}</version>
     </parent>
 
     <artifactId>vt-roster-scraper-core</artifactId>
-    <version>0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
     </properties>
 
     <build>
+    	<plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <configuration>
+                    <url>jdbc:h2:file:./target/vtrosterscraper</url>
+                    <user>sa</user>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
     <dependencies>
+    	<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>javax.persistence</groupId>
+		    <artifactId>persistence-api</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.flywaydb</groupId>
+		    <artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.flywaydb</groupId>
+		    <artifactId>flyway-maven-plugin</artifactId>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.h2database</groupId>
+		    <artifactId>h2</artifactId>
+		    <scope>test</scope>
+		</dependency>
     </dependencies>
 
 </project>

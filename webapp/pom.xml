@@ -7,10 +7,9 @@
     <parent>
         <groupId>com.mbeck</groupId>
         <artifactId>vt-roster-scraper</artifactId>
-        <version>0.1-SNAPSHOT</version>
+        <version>${project.version}</version>
     </parent>
 
-    <groupId>com.mbeck</groupId>
     <artifactId>vt-roster-scraper-webapp</artifactId>
     <packaging>war</packaging>
 
@@ -30,6 +29,11 @@
     </build>
 
     <dependencies>
+    	<dependency>
+    		<groupId>com.mbeck</groupId>
+    		<artifactId>vt-roster-scraper-web</artifactId>
+    		<version>${project.version}</version>
+    	</dependency>
     </dependencies>
 
 </project>
